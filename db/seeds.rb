@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create!(name: "Admin", email: "admin@framgia.com", password:"admin123",
+	password_confirmation: "admin123", is_supervisor: true,
+	created_at: Time.zone.now)

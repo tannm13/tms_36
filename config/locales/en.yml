@@ -26,6 +26,10 @@ en:
     header:
       home: "Home"
       login: "Login"
+      user: "User"
+      profile: "Profile"
+      setting: "Setting"
+      logout: "Logout"
     footer:
       contact: "Contact"
       help: "Help"
@@ -34,4 +38,6 @@ en:
     home:
       welcome: "Welcome to TMS_36"
       support: "please contact TMS_36 for support"
-
+  flashs:
+    user:
+      invalid: "Something is wrong. Please try again"
