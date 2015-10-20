@@ -20,4 +20,18 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  tms_36: "TMS_36"
+  title: "TMS_36 project"
+  layouts:
+    header:
+      home: "Home"
+      login: "Login"
+    footer:
+      contact: "Contact"
+      help: "Help"
+      about: "About"
+  static_pages:
+    home:
+      welcome: "Welcome to TMS_36"
+      support: "please contact TMS_36 for support"
+
