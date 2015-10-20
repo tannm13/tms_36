@@ -1,0 +1,92 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+    color: #505050
+  }
+  h2 {
+    color: #404040;
+  }
+}
+.navbar-custom {
+  color: #e6e6e6;
+  background-color: #e6e6e6;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  text-decoration: none;
+}
+
+.navbar-right {
+  font-size: 1.3em;
+}
+
+footer {
+  padding-bottom: 50px;
+  border-top: 2px solid #ff0000;
+  color: #787878;
+  a {
+    color: #787878;
+    &:hover {
+      color: #222;
+    }
+  }
+  small {
+    float: left;
+    font-size: 1.3em;
+    text-transform: uppercase;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
