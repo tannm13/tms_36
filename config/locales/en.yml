@@ -22,6 +22,12 @@
 en:
   tms_36: "TMS_36"
   title: "TMS_36 project"
+  error: "error"
+  labels:
+    confirm: "Confirmation"
+  buttons:
+    is_supervisor: "is supervisor?"
+    create: "Create new user"
   layouts:
     header:
       home: "Home"
@@ -30,6 +36,7 @@ en:
       profile: "Profile"
       setting: "Setting"
       logout: "Logout"
+      signup: "Sign Up"
     footer:
       contact: "Contact"
       help: "Help"
@@ -41,3 +48,6 @@ en:
   flashs:
     user:
       invalid: "Something is wrong. Please try again"
+      signup: "Create user success"
+  shared:
+    error: "The form contain"
