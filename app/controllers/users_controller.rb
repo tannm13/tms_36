@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  before_action :authorize_user, except: [:destroy, :create, :new]
+
+  def index
+    @users = User.paginate page: params[:page]
+  end
 
   def new
     @user = User.new

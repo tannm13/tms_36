@@ -7,4 +7,11 @@ class ApplicationController < ActionController::Base
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
+
+  def authorize_user
+    unless logged_in?
+      flash[:danger] = t "flashs.user.not_login"
+      redirect_to login_url
+    end
+  end
 end

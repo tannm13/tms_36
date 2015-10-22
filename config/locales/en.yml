@@ -30,6 +30,7 @@ en:
     create: "Create new user"
   layouts:
     header:
+      all: "All users"
       home: "Home"
       login: "Login"
       user: "User"
@@ -47,7 +48,8 @@ en:
       support: "please contact TMS_36 for support"
   flashs:
     user:
-      invalid: "Something is wrong. Please try again"
-      signup: "Create user success"
+      invalid: "Something is wrong. Please try again!"
+      signup: "Created user successflly!"
+      not_login: "Please log in"
   shared:
     error: "The form contain"
