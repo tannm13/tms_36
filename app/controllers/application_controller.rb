@@ -8,8 +8,16 @@ class ApplicationController < ActionController::Base
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
+  def authorize_supervisor
+    unless current_user.is_supervisor?
+      flash[:danger] = t "flashs.user.not_admin"
+      redirect_to root_path
+    end
+  end
+
   def authorize_user
     unless logged_in?
+      store_location
       flash[:danger] = t "flashs.user.not_login"
       redirect_to login_url
     end

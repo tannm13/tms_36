@@ -4,4 +4,9 @@ Rails.application.routes.draw do
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
   resources :users, except: [:destroy, :create, :new]
+
+  namespace :supervisors do
+    root "static_pages#home"
+    resources :users
+  end
 end

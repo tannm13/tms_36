@@ -28,8 +28,10 @@ en:
   buttons:
     is_supervisor: "is supervisor?"
     create: "Create new user"
+    edit: "Edit"
   layouts:
     header:
+      account: "Account"
       all: "All users"
       home: "Home"
       login: "Login"
@@ -51,5 +53,10 @@ en:
       invalid: "Something is wrong. Please try again!"
       signup: "Created user successflly!"
       not_login: "Please log in"
+      not_admin: "Please log in as Supervisor"
+      edit: "Profile updated"
+      error_edit: "Update error"
+      error_sigun: "Sign up error"
   shared:
     error: "The form contain"
+  admin: "Admin"
