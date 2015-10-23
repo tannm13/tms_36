@@ -56,7 +56,13 @@ en:
       not_admin: "Please log in as Supervisor"
       edit: "Profile updated"
       error_edit: "Update error"
-      error_sigun: "Sign up error"
+      error_signup: "Sign up error"
+      del: "User deleted"
+      del_error: "Delete user not success"
   shared:
     error: "The form contain"
   admin: "Admin"
+  users:
+    delete: "Delete"
+
+    ask_del: "You sure?"

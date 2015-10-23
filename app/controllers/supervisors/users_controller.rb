@@ -3,8 +3,22 @@ class Supervisors::UsersController < ApplicationController
   before_action :authorize_supervisor
   before_action :find_user, except: [:new, :create, :index]
 
+  def index
+    @users = User.paginate page: params[:page]
+  end
+
   def new
     @user = User.new
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t "flashs.user.del"
+      redirect_to supervisors_users_url
+    else
+      flash[:success] = t "flashs.user.del_error"
+      redirect_to supervisors_users_url
+    end
   end
 
   def create
@@ -13,7 +27,7 @@ class Supervisors::UsersController < ApplicationController
       flash[:success] = t "flashs.user.signup"
       redirect_to root_path
     else
-      flash.now[:danger] = t "flashs.user.error_sigun"
+      flash.now[:danger] = t "flashs.user.error_signup"
       render :new
     end
   end
