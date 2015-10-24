@@ -1,0 +1,28 @@
+<% provide :title, t("dashboard.admin") %>
+<h1><%= t "dashboard.admin" %></h1>
+<hr>
+<div class="row">
+  <div class="col-md-3">
+    <h2 class="text-success"><%= t "layouts.header.users" %></h2>
+    <a href="<%= supervisors_users_path %>">
+      <span class="glyphicon glyphicon-user dashboard"></span>
+      <%= @number_of_users %>
+    </a>
+    <br>
+    <a class="glyphicon glyphicon-plus" href="<%= new_supervisors_user_path %>">
+      <%= t "buttons.create_new_user" %>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <h2 class="text-success"><%= t "layouts.header.courses" %></h2>
+    <a href="#">
+      <span class="glyphicon glyphicon-book dashboard"></span>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <h2 class="text-success"><%= t "layouts.header.subjects" %></h2>
+    <a href="#">
+      <span class="glyphicon glyphicon-list-alt dashboard"></span>
+    </a>
+  </div>
+</div>

@@ -27,7 +27,8 @@ en:
     confirm: "Confirmation"
   buttons:
     is_supervisor: "is supervisor?"
-    create: "Create new user"
+    create_new_user: "Create new user"
+    create_new_course: "Create new course"
     edit: "Edit"
   layouts:
     header:
@@ -35,11 +36,13 @@ en:
       all: "All users"
       home: "Home"
       login: "Login"
-      user: "User"
+      user: "Users"
       profile: "Profile"
       setting: "Setting"
       logout: "Logout"
       signup: "Sign Up"
+      courses: "Courses"
+      subjects: "Subjects"
     footer:
       contact: "Contact"
       help: "Help"
@@ -67,3 +70,8 @@ en:
     delete: "Delete"
     ask_del: "You sure?"
     edit: "Edit"
+  dashboard:
+    admin: "Admin Dashboard"
+    course: "Course Dashboard"
+    user: "User Dashboard"
+    subject: "Subject Dashboard"

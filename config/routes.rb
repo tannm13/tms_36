@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :users, except: [:destroy, :create, :new]
 
   namespace :supervisors do
-    root "static_pages#home"
+    root "dashboard#index"
     resources :users
+    resources :courses
   end
 end
