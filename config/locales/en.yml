@@ -63,6 +63,8 @@ en:
       del: "User deleted"
       del_error: "Delete user not success"
       show: "This user is Supervisor"
+    course:
+      create: "Created successfully!"
   shared:
     error: "The form contain"
   admin: "Admin"

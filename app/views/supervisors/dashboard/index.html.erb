@@ -17,6 +17,11 @@
     <h2 class="text-success"><%= t "layouts.header.courses" %></h2>
     <a href="#">
       <span class="glyphicon glyphicon-book dashboard"></span>
+      <%= @number_of_courses %>
+    </a>
+    <br>
+    <a class="glyphicon glyphicon-plus" href="<%= new_supervisors_course_path %>">
+      <%= t "buttons.create_new_course" %>
     </a>
   </div>
   <div class="col-md-3">
