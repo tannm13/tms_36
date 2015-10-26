@@ -1,0 +1,30 @@
+<%= form_for [:supervisors, @subject] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description, class: "form-control" %>
+
+  <%= f.label :status %>
+  <%= f.select :status, options_for_select(Subject.statuses.map{|k, v| [k, k]}),
+    class: "form-control" %>
+
+  <%= f.label :start_date %>
+  <%= f.date_select :start_date, class: "form-control" %>
+
+  <%= f.label :end_date %>
+  <%= f.date_select :end_date, class: "form-control" %>
+
+  <h2><%= t "subject.tasks"  %></h2>
+
+  <%= f.fields_for :tasks do |t| %>
+  <ul>
+    <%= render "task_fields", f: t %>
+    <%= link_to_add_fields t("buttons.new_task"), f, :tasks %>
+  </ul>
+  <% end %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>
