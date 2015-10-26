@@ -20,3 +20,19 @@ User.create!(name: "Admin", email: "admin@framgia.com", password:"admin123",
     is_supervisor: false,
     created_at: Time.zone.now)
 end
+
+10.times do |n|
+  name = Faker::Name.name
+  demo = "Demo description"
+  Subject.create!(name: name,
+    description: demo,
+    created_at: Time.zone.now)
+end
+
+10.times do |n|
+  name = Faker::Name.name
+  demo = "Demo description"
+  Course.create!(name: name,
+    description: demo,
+    created_at: Time.zone.now)
+end
