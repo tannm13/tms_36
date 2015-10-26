@@ -29,6 +29,9 @@ en:
     is_supervisor: "is supervisor?"
     create_new_user: "Create new user"
     create_new_course: "Create new course"
+    create_new_subject: "Create new subject"
+    new_task: "Add new task"
+    remove_task: "remove"
     edit: "Edit"
   layouts:
     header:
@@ -43,6 +46,7 @@ en:
       signup: "Sign Up"
       courses: "Courses"
       subjects: "Subjects"
+      new_subject: "New Subject"
     footer:
       contact: "Contact"
       help: "Help"
@@ -65,6 +69,9 @@ en:
       show: "This user is Supervisor"
     course:
       create: "Created successfully!"
+    subject:
+      created: "Created subject successflly!"
+      error_created: "Created error"
   shared:
     error: "The form contain"
   admin: "Admin"
@@ -77,3 +84,5 @@ en:
     course: "Course Dashboard"
     user: "User Dashboard"
     subject: "Subject Dashboard"
+  subject:
+    tasks: "Tasks :"

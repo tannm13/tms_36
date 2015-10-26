@@ -1,0 +1,10 @@
+<li>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description, class: "form-control" %>
+
+  <%= f.hidden_field :_destroy %>
+  <%= link_to t("buttons.remove_task"), "#", class: "remove_fields" %>
+</li>
