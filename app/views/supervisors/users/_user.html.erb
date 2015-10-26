@@ -1,6 +1,9 @@
 <li>
   <%= gravatar_for user, size = 50 %>
-  <%= link_to user.name, user %>
-  | <%= link_to t("users.delete"), supervisors_user_path(user),
+  <%= link_to user.name, supervisors_user_path(user) %>
+  <% unless user.is_supervisor? %>
+    | <%= link_to t("users.edit"), edit_supervisors_user_path(user) %>
+    | <%= link_to t("users.delete"), supervisors_user_path(user),
       method: :delete, data: {confirm: t("users.ask_del")} %>
+  <% end %>
 </li>

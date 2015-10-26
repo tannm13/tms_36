@@ -36,6 +36,10 @@ class Supervisors::UsersController < ApplicationController
   end
 
   def edit
+    if @user.is_supervisor && !current_user?(@user)
+      redirect_back_or root_url
+      flash[:danger] = t "flashs.user.show"
+    end
   end
 
   def update

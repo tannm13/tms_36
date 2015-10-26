@@ -59,10 +59,11 @@ en:
       error_signup: "Sign up error"
       del: "User deleted"
       del_error: "Delete user not success"
+      show: "This user is Supervisor"
   shared:
     error: "The form contain"
   admin: "Admin"
   users:
     delete: "Delete"
-
     ask_del: "You sure?"
+    edit: "Edit"
