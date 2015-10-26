@@ -5,10 +5,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t("layouts.header.home"), root_path %></li>
         <% if logged_in? && supervisor? %>
-          <li><%= link_to t("layouts.header.all"),
-            supervisors_users_path %></li>
-          <li><%= link_to t("buttons.create"),
-            new_supervisors_user_path %></li>
+          <li><%= link_to t("dashboard.admin"),
+            supervisors_root_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <%= t "layouts.header.account" %>
