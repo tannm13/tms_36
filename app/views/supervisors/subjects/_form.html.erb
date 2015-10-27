@@ -20,11 +20,9 @@
   <h2><%= t "subjects.tasks"  %></h2>
 
   <%= f.fields_for :tasks do |t| %>
-  <ul>
     <%= render "task_fields", f: t %>
-    <%= link_to_add_fields t("buttons.new_task"), f, :tasks %>
-  </ul>
   <% end %>
+  <%= link_to_add_fields t("buttons.new_task"), f, :tasks %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

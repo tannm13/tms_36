@@ -2,13 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
-  $(document).on 'click', '.remove_fields', (event) ->
-    $(this).prev('input[type=hidden]').val('1')
-    $(this).closest('li').hide()
+  $(document).on "click", ".remove_fields", (event) ->
+    $(this).prev("input[type=hidden]").val("1")
+    $(this).closest("div").hide()
     event.preventDefault()
 
-  $(document).on 'click', '.add_fields', (event) ->
+  $(document).on "click", ".add_fields", (event) ->
     time = new Date().getTime()
-    regexp = new RegExp($(this).data('id'), 'g')
-    $(this).before($(this).data('fields').replace(regexp, time))
+    regexp = new RegExp($(this).data("id"), "g")
+    $(this).before($(this).data("fields").replace(regexp, time))
     event.preventDefault()
