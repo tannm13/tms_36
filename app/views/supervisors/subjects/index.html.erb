@@ -1,0 +1,21 @@
+<br>
+<div class="row text-success">
+  <div class="col-md-9">
+    <table class="table">
+      <tr>
+        <th class="text-center col-md-2"><%= t "subjects.name" %></th>
+        <th class="text-center"><%= t "subjects.detail" %></th>
+        <th class="text-center"><input type="checkbox" id="check-all"></th>
+        <th class="text-center"><%= t "subjects.edit" %></th>
+      </tr>
+      <%= render @subjects %>
+    </table>
+    <%= will_paginate %>
+  </div>
+  <div class="col-md-3">
+    <a class="btn btn-success" href="<%= new_supervisors_subject_path %>">
+      <span class="glyphicon glyphicon-plus"></span>
+      <%= t "subjects.create" %>
+    </a>
+  </div>
+</div>

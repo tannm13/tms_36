@@ -26,8 +26,9 @@
   </div>
   <div class="col-md-3">
     <h2 class="text-success"><%= t "layouts.header.subjects" %></h2>
-    <a href="#">
-      <span class="glyphicon glyphicon-list-alt dashboard"></span>
+    <a href="<%= supervisors_subjects_path %>">
+      <span class="glyphicon glyphicon-book dashboard"></span>
+      <%= @number_of_subjects %>
     </a>
   </div>
 </div>
