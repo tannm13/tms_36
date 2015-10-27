@@ -36,7 +36,8 @@ en:
   layouts:
     header:
       account: "Account"
-      all: "All users"
+      all_user: "All users"
+      all_course: "All course"
       home: "Home"
       login: "Login"
       user: "Users"
