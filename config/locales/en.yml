@@ -30,9 +30,11 @@ en:
     create_new_user: "Create new user"
     create_new_course: "Create new course"
     create_new_subject: "Create new subject"
+    edit_subject: "Edit Subject"
     new_task: "Add new task"
     remove_task: "remove"
     edit: "Edit"
+    finished: " finished"
   layouts:
     header:
       account: "Account"
@@ -48,6 +50,7 @@ en:
       courses: "Courses"
       subjects: "Subjects"
       new_subject: "New Subject"
+      edit_subject: "Edit Subject"
     footer:
       contact: "Contact"
       help: "Help"
@@ -73,6 +76,8 @@ en:
     subject:
       created: "Created subject successflly!"
       error_created: "Created error"
+      updated: "Updated subject successflly!"
+      error_updated: "Updated error"
   shared:
     error: "The form contain"
   admin: "Admin"
