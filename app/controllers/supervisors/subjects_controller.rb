@@ -3,6 +3,10 @@ class Supervisors::SubjectsController < ApplicationController
   before_action :authorize_user
   before_action :authorize_supervisor
 
+  def index
+    @subjects = Subject.recent.paginate page: params[:page]
+  end
+
   def new
     @subject = Subject.new
     @subject.tasks.build

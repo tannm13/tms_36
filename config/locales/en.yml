@@ -85,5 +85,11 @@ en:
     course: "Course Dashboard"
     user: "User Dashboard"
     subject: "Subject Dashboard"
-  subject:
+  subjects:
+    task: "task"
     tasks: "Tasks :"
+    name: "Name"
+    edit: "Edit"
+    detail: "Detail"
+    create_more: "Create"
+    decription: "Decription"

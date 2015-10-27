@@ -4,5 +4,6 @@ class Supervisors::DashboardController < ApplicationController
   def index
     @number_of_users = User.all.size
     @number_of_courses = Course.all.size
+    @number_of_subjects = Subject.all.size
   end
 end
