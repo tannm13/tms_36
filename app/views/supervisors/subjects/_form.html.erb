@@ -8,7 +8,7 @@
   <%= f.text_field :description, class: "form-control" %>
 
   <%= f.label :status %>
-  <%= f.select :status, options_for_select(Subject.statuses.map{|k, v| [k, k]}),
+  <%= f.select :status, options_for_select(Subject.statuses.map{|k, v| [k, k]}, f.object.status),
     class: "form-control" %>
 
   <%= f.label :start_date %>
@@ -17,7 +17,7 @@
   <%= f.label :end_date %>
   <%= f.date_select :end_date, class: "form-control" %>
 
-  <h2><%= t "subject.tasks"  %></h2>
+  <h2><%= t "subjects.tasks"  %></h2>
 
   <%= f.fields_for :tasks do |t| %>
   <ul>

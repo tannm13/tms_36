@@ -12,6 +12,10 @@ class Supervisors::SubjectsController < ApplicationController
     @subject.tasks.build
   end
 
+  def edit
+    @subject.tasks.build unless @subject.tasks.any?
+  end
+
   def create
     @subject = Subject.new subject_params
     if @subject.save
@@ -24,6 +28,16 @@ class Supervisors::SubjectsController < ApplicationController
     end
   end
 
+  def update
+    if @subject.update_attributes subject_params
+      flash[:success] = t "flashs.subject.updated"
+      redirect_to [:supervisors, @subject]
+    else
+      flash.now[:danger] = t "flashs.subject.error_updated"
+      render :edit
+    end
+  end
+
   private
   def find_subject
     @subject = Subject.find params[:id]
@@ -31,6 +45,6 @@ class Supervisors::SubjectsController < ApplicationController
 
   def subject_params
     params.require(:subject).permit :name, :description, :status, :start_date,
-    :end_date, tasks_attributes: [:id, :name, :description, :_destroy]
+    :end_date, tasks_attributes: [:id, :name, :description, :status, :_destroy]
   end
 end
