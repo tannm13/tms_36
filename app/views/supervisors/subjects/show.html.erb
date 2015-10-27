@@ -1,0 +1,17 @@
+<%= provide :title, @subject.name %>
+<div class="row">
+  <h1><%= @subject.name %></h1>
+  <div class="list-group">
+    <%= render @subject.tasks if @subject.tasks.any? %>
+  </div>
+  <hr/>
+  <strong><%= t "subjects.start_date" %></strong>
+  <%= @subject.start_date %><br/>
+  <strong><%= t "subjects.end_date" %></strong>
+  <%= @subject.end_date %><br/>
+  <strong><%= t "subjects.status" %></strong>
+  <%= @subject.status %><br/>
+  <hr/>
+  <strong><%= t "subjects.description" %></strong>
+  <div><%= @subject.description %></div>
+</div>

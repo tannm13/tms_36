@@ -98,3 +98,6 @@ en:
     detail: "Detail"
     create_more: "Create"
     decription: "Decription"
+    start_date: "Start date: "
+    end_date: "End date: "
+    status: "Status: "

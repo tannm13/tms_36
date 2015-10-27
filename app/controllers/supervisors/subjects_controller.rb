@@ -12,6 +12,9 @@ class Supervisors::SubjectsController < ApplicationController
     @subject.tasks.build
   end
 
+  def show
+  end
+
   def edit
     @subject.tasks.build unless @subject.tasks.any?
   end
@@ -44,7 +47,8 @@ class Supervisors::SubjectsController < ApplicationController
   end
 
   def subject_params
-    params.require(:subject).permit :name, :description, :status, :start_date,
-    :end_date, tasks_attributes: [:id, :name, :description, :status, :_destroy]
+    params.require(:subject).permit :name, :description, :status,
+      :start_date, :end_date,
+      tasks_attributes: [:id, :name, :description, :status, :_destroy]
   end
 end

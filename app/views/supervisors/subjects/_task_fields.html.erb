@@ -1,15 +1,15 @@
-<li>
+<div class="col-sm-offset-2 col-sm-10">
   <%= f.label :name %>
   <%= f.text_field :name, class: "form-control" %>
 
   <%= f.label :description %>
   <%= f.text_area :description, class: "form-control" %>
 
-  <%= f.label :status, class: "checkbox inline" do %>
+  <%= f.label :status, class: "pull-right" do %>
     <%= f.check_box :status %>
-    <span><%= t "buttons.finished" %></span>
+    <%= t "buttons.finished" %>
   <% end %>
 
   <%= f.hidden_field :_destroy %>
   <%= link_to t("buttons.remove_task"), "#", class: "remove_fields" %>
-</li>
+</div>
