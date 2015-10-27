@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-
+gem "config"
 gem "rails", "4.2.4"
 gem "rails-i18n", "~> 4.0.0" # For 4.0.x
 gem "sqlite3"
