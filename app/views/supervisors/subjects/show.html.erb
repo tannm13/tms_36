@@ -10,8 +10,11 @@
   <strong><%= t "subjects.end_date" %></strong>
   <%= @subject.end_date %><br/>
   <strong><%= t "subjects.status" %></strong>
-  <%= @subject.status %><br/>
+  <%= @course_subject.nil? ? @subject.status : @course_subject.status %><br/>
   <hr/>
   <strong><%= t "subjects.description" %></strong>
   <div><%= @subject.description %></div>
+  <div id="finish_subject" class="row text-center">
+    <%= render "finish_form" unless @course_subject.nil? %>
+  </div>
 </div>

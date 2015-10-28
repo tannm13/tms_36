@@ -13,6 +13,11 @@ class Supervisors::SubjectsController < ApplicationController
   end
 
   def show
+    if params[:course_id]
+      @course = Course.find params[:course_id]
+      @course_subject =
+        @subject.course_subjects.find_by course_id: @course.id
+    end
   end
 
   def edit

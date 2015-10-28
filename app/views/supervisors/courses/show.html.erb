@@ -72,7 +72,8 @@
           <%= link_to t("course.edit"),
             edit_supervisors_course_path(@course) %> |
           <%= link_to t("courses.add_subject"),
-            edit_supervisors_course_course_subjects_path(@course) %>
+            edit_supervisors_course_course_subject_path(@course,
+            @course_subject) %>
         </li>
     </tr>
   </table>

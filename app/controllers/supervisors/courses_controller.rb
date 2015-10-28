@@ -3,6 +3,8 @@ class Supervisors::CoursesController < ApplicationController
   before_action :authorize_supervisor
   before_action :find_course, except: [:index, :new]
   before_action :find_subject, except: [:destroy, :index, :show]
+  before_action :find_course_subject, only: [:show]
+
 
   def new
     @course = Course.new
@@ -52,6 +54,10 @@ class Supervisors::CoursesController < ApplicationController
   private
   def find_course
     @course = Course.find params[:id]
+  end
+
+  def find_course_subject
+    @course_subject = CourseSubject.find params[:id]
   end
 
   def course_params

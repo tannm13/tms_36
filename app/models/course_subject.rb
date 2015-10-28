@@ -1,4 +1,6 @@
 class CourseSubject < ActiveRecord::Base
+  enum status: {started: 0, finished: 1}
+  
   belongs_to :course
   belongs_to :subject
   

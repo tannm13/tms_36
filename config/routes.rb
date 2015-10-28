@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     root "dashboard#index"
     resources :users
     resources :courses do
-      resource :course_subjects, only: [:edit, :update]
+      resources :course_subjects, only: [:edit, :update]
       resources :subjects, only: :show
     end
     resources :subjects
