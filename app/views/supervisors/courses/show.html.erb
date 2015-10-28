@@ -1,0 +1,69 @@
+<% provide :title, @course.name %>
+<div class="container">
+  <h1 class="text-center text-success">
+    <%= t("courses.name").capitalize %> : <%= @course.name %>
+  </h1>
+  <h2 class="text-center">
+    <span class="label label-<%= @course.status == "finished" ? "danger" : "success" %>">
+      <%= t @course.status == "finished" ? "courses.finished" : "courses.started" %>
+    </span>
+  </h2>
+  <table class="table">
+    <tr>
+      <td class="size18px text-info col-md-2">
+        <b class="pull-right"><%= t "courses.description" %> :</b>
+      </td>
+      <td>
+        <%= @course.description %>
+      </td>
+    </tr>
+    <tr>
+      <td class="size18px text-info col-md-2">
+        <b class="pull-right">
+          <%= pluralize @course.subjects.count, t("courses.supervisor") %>:</b>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="size18px text-info col-md-2">
+        <b class="pull-right">
+          <%= pluralize @course.users.count, t("courses.trainee") %> :
+        </b>
+      </td>
+      <td>
+        <% @course.users.each do |user| %>
+          <span class="glyphicon glyphicon-user text-info"></span>&nbsp;
+          <%= link_to user.name, "#" %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td class="size18px text-info col-md-2">
+        <b class="pull-right"><%= t "courses.subjects" %> :</b>
+      </td>
+      <td>
+        <% @course.subjects.each do |subject| %>
+          <span class="glyphicon glyphicon-file text-info"></span>&nbsp;
+          <%= link_to subject.name, "#" %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td class="size18px text-info col-md-2">
+        <b class="pull-right"><%= t "course.start_date" %> :</b>
+      </td>
+      <td>
+        <%= @course.start_date %>
+      </td>
+    </tr>
+    <tr>
+      <td class="size18px text-info col-md-2">
+        <b class="pull-right"><%= t "course.end_date" %> :</b>
+      </td>
+      <td>
+        <%= @course.end_date %>
+      </td>
+    </tr>
+  </table>
+</div>

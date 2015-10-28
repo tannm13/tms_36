@@ -1,6 +1,8 @@
 class Supervisors::CoursesController < ApplicationController
   before_action :authorize_user
   before_action :authorize_supervisor
+  before_action :find_course
+
   def new
     @subjects = Subject.all
     @course = Course.new
@@ -18,6 +20,9 @@ class Supervisors::CoursesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def index
     @courses = Course.paginate page: params[:page],
      per_page: Settings.courses.per_page
@@ -26,5 +31,9 @@ class Supervisors::CoursesController < ApplicationController
   def course_params
     params.require(:course).permit :name, :description, :status, :start_date,
     :end_date, subject_ids: []
+  end
+
+  def find_course
+    @course = Course.find params[:id]
   end
 end
