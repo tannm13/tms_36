@@ -1,0 +1,22 @@
+<div class="row">
+  <div>
+    <%= form_for @course, url: supervisors_course_course_subjects_path do |f| %>
+      <h1><%= t "courses.add_subject_to_course" %> </h1>
+      <%= hidden_field_tag "course[subject_ids][]" %>
+      <table class="table">
+        <% @subjects.each do |subject| %>
+          <tr>
+            <td class="text-info"><b><%= subject.name %></b></td>
+            <td>
+              <%= f.check_box :subject_ids, {name: "course[subject_ids][]",
+                checked: @course.subjects.include?(subject)}, subject.id, nil %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+      <div class="actions">
+        <%= f.submit t("buttons.submit"), class: "btn btn-success" %>
+      </div>
+    <% end %>
+  </div>
+</div>

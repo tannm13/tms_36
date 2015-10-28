@@ -1,6 +1,7 @@
 <tr>
   <td class="text-center">
-    <b><%= subject.name %></b><br>
+    <b><%= link_to subject.name,
+      supervisors_subject_path(subject) %></b><br>
     <%= pluralize subject.tasks.count, t("subjects.task") %>
   </td>
   <td>
