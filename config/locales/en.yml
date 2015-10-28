@@ -101,3 +101,13 @@ en:
     start_date: "Start date: "
     end_date: "End date: "
     status: "Status: "
+  courses:
+    name: "Course Name"
+    started: "Started"
+    finished: "Finished"
+    description: "Description"
+    start_date: "Start date"
+    end_date: "End date"
+    supervisor: "Supervisors"
+    trainee: "Trainees"
+    subject: "Subjects"
