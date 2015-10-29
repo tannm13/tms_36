@@ -35,6 +35,7 @@ en:
     remove_task: "remove"
     edit: "Edit"
     finished: " finished"
+    submit: "Add"
   layouts:
     header:
       account: "Account"
@@ -111,3 +112,8 @@ en:
     supervisor: "Supervisors"
     trainee: "Trainees"
     subject: "Subjects"
+    add_subject_to_course: "Add subjects to course"
+    add_subject: "Add subjects"
+    edit_course: "Edit"
+    update_success: "Course updated"
+    update_error: "Course update error"
