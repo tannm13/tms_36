@@ -74,6 +74,7 @@ en:
       show: "This user is Supervisor"
     course:
       create: "Created successfully!"
+      delete: "Deleted successfully!"
     subject:
       created: "Created subject successflly!"
       error_created: "Created error"
@@ -117,3 +118,5 @@ en:
     edit_course: "Edit"
     update_success: "Course updated"
     update_error: "Course update error"
+    delete: "Delete"
+    confirm: "Do you really want to delete this course?"

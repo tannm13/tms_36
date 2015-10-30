@@ -1,3 +1,5 @@
 <li>
-  <%= link_to course.name, supervisors_course_path(course)%>
+  <%= link_to course.name, supervisors_course_path(course) %> |
+  <%= link_to t("courses.delete"), supervisors_course_path(course),
+    method: :delete, data: {confirm: t("courses.confirm")} %>
 </li>
