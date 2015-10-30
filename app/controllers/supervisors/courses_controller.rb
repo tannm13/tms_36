@@ -1,7 +1,7 @@
 class Supervisors::CoursesController < ApplicationController
   before_action :authorize_user
   before_action :authorize_supervisor
-  before_action :find_course, only: :show
+  before_action :find_course, only: [:show, :destroy]
 
   def new
     @subjects = Subject.all
@@ -21,6 +21,15 @@ class Supervisors::CoursesController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    if @course.destroy
+      flash[:success] = t "flashs.course.delete"
+    else
+      flash[:danger] = t "flashs.user.invalid"
+    end
+    redirect_to supervisors_courses_path
   end
 
   def index
