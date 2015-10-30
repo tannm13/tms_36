@@ -1,10 +1,10 @@
 class Supervisors::CoursesController < ApplicationController
   before_action :authorize_user
   before_action :authorize_supervisor
-  before_action :find_course, only: [:show, :destroy]
+  before_action :find_course, except: [:index, :new]
+  before_action :find_subject, except: [:destroy, :index, :show]
 
   def new
-    @subjects = Subject.all
     @course = Course.new
   end
 
@@ -15,7 +15,6 @@ class Supervisors::CoursesController < ApplicationController
       redirect_to :back
     else
       flash.now[:danger] = t "flashs.user.invalid"
-      @subjects = Subject.all
       render :new
     end
   end
@@ -37,6 +36,19 @@ class Supervisors::CoursesController < ApplicationController
      per_page: Settings.courses.per_page
   end
 
+  def edit
+  end
+
+  def update
+    if @course.update_attributes course_params
+      flash[:success] = t "flashs.course.update"
+      redirect_to supervisors_courses_path
+    else
+      flash.now[:danger] = t "flashs.user.invalid"
+      render :edit
+    end
+  end
+
   private
   def find_course
     @course = Course.find params[:id]
@@ -47,7 +59,7 @@ class Supervisors::CoursesController < ApplicationController
     :end_date, subject_ids: []
   end
 
-  def find_course
-    @course = Course.find params[:id]
+  def find_subject
+    @subjects = Subject.all
   end
 end

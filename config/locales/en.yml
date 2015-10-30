@@ -75,6 +75,7 @@ en:
     course:
       create: "Created successfully!"
       delete: "Deleted successfully!"
+      update: "Updated successfully!"
     subject:
       created: "Created subject successflly!"
       error_created: "Created error"
@@ -120,3 +121,4 @@ en:
     update_error: "Course update error"
     delete: "Delete"
     confirm: "Do you really want to delete this course?"
+    edit_form: "Edit course"
