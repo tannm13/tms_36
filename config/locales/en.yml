@@ -31,6 +31,7 @@ en:
     create_new_course: "Create new course"
     create_new_subject: "Create new subject"
     edit_subject: "Edit Subject"
+    finish_subject: "Finish subject"
     new_task: "Add new task"
     remove_task: "remove"
     edit: "Edit"
@@ -63,7 +64,7 @@ en:
   flashs:
     user:
       invalid: "Something is wrong. Please try again!"
-      signup: "Created user successflly!"
+      signup: "Created user successfully!"
       not_login: "Please log in"
       not_admin: "Please log in as Supervisor"
       edit: "Profile updated"
@@ -77,9 +78,9 @@ en:
       delete: "Deleted successfully!"
       update: "Updated successfully!"
     subject:
-      created: "Created subject successflly!"
+      created: "Created subject successfully!"
       error_created: "Created error"
-      updated: "Updated subject successflly!"
+      updated: "Updated subject successfully!"
       error_updated: "Updated error"
   shared:
     error: "The form contain"

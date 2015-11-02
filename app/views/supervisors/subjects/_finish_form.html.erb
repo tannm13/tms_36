@@ -1,0 +1,7 @@
+<% if @course_subject.finished? %>
+  <%= render "finished" %>
+<% else %>
+  <%= link_to t("buttons.finish_subject"),
+    supervisors_course_course_subject_path(@course, @course_subject,
+    finish_subject: true), method: :put, remote: true %>
+<% end %>
