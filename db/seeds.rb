@@ -9,7 +9,7 @@ User.create!(name: "Admin", email: "admin@framgia.com", password:"admin123",
 	password_confirmation: "admin123", is_supervisor: true,
 	created_at: Time.zone.now)
 
-99.times do |n|
+9.times do |n|
   name = Faker::Name.name
   email = "example-#{n+1}@tms36.org"
   password = "123456"
@@ -26,7 +26,8 @@ end
   demo = "Demo description"
   Subject.create!(name: name,
     description: demo,
-    created_at: Time.zone.now)
+    created_at: Time.zone.now,
+    status: 0)
 end
 
 10.times do |n|
@@ -34,5 +35,6 @@ end
   demo = "Demo description"
   Course.create!(name: name,
     description: demo,
-    created_at: Time.zone.now)
+    created_at: Time.zone.now,
+    status: 0)
 end

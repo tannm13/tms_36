@@ -57,7 +57,7 @@ class Supervisors::CoursesController < ApplicationController
   end
 
   def find_course_subject
-    @course_subject = CourseSubject.find params[:id]
+    @course_subject = @course.course_subjects.find params[:id]
   end
 
   def course_params
