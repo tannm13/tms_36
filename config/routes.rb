@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
-  resources :users, except: [:destroy, :create, :new]
+  resources :users, except: [:destroy, :create, :new] do
+    resources :courses, only: :show
+    resources :subjects
+  end
 
   namespace :supervisors do
     root "dashboard#index"

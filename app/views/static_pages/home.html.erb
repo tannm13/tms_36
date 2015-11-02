@@ -6,6 +6,7 @@
 </head>
 <body>
   <h1><%= t "static_pages.home.welcome" %></h1>
-  <h3><%= t "static_pages.home.support" %></h3> 
+  <h3><%= t "static_pages.home.support" %></h3>
+  <%= render @courses if current_user %>
 </body>
 </html>
