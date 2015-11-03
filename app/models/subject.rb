@@ -1,4 +1,6 @@
 class Subject < ActiveRecord::Base
+  include StateAble
+
   enum status: {started: 0, finished: 1}
 
   has_many :tasks, dependent: :destroy

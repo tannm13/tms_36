@@ -5,7 +5,6 @@ class Supervisors::CoursesController < ApplicationController
   before_action :find_subject, except: [:destroy, :index, :show]
   before_action :find_course_subject, only: [:show]
 
-
   def new
     @course = Course.new
   end
@@ -42,6 +41,11 @@ class Supervisors::CoursesController < ApplicationController
   end
 
   def update
+    params[:finish_course] ? finish_course : update_course
+  end
+
+  private
+  def update_course
     if @course.update_attributes course_params
       flash[:success] = t "flashs.course.update"
       redirect_to supervisors_courses_path
@@ -51,7 +55,18 @@ class Supervisors::CoursesController < ApplicationController
     end
   end
 
-  private
+  def finish_course
+    if @course.update_status :finished
+      flash.now[:success] = t "flashs.course.update"
+    else
+      flash.now[:danger] = t "flashs.user.invalid"
+    end
+    respond_to do |format|
+      format.html {redirect_to :back}
+      format.js
+    end
+  end
+
   def find_course
     @course = Course.find params[:id]
   end

@@ -37,6 +37,7 @@ en:
     edit: "Edit"
     finished: " finished"
     submit: "Add"
+    finish: "Finish"
   layouts:
     header:
       account: "Account"
