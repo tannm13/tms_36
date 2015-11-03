@@ -7,3 +7,8 @@
 <p class="container-fluid">
   <%= @course.description %>
 </p>
+<hr/>
+<h2><%= t "courses.trainee" %>: </h2>
+<% @course.users.each do |user| %>
+  <%= render user %>
+<% end %>
