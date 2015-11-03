@@ -123,3 +123,7 @@ en:
     delete: "Delete"
     confirm: "Do you really want to delete this course?"
     edit_form: "Edit course"
+  instructions: "Instructions: "
+  time:
+    formats:
+      short_date: "%d-%m-%Y"
