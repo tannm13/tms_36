@@ -1,5 +1,9 @@
 <% if @course_subject.finished? %>
-  <%= render "finished" %>
+  <h2 class="text-center">
+    <span class="label label-success">
+      <%= render "shared/finished" %>
+    </span>
+  </h2>
 <% else %>
   <%= link_to t("buttons.finish_subject"),
     supervisors_course_course_subject_path(@course, @course_subject,

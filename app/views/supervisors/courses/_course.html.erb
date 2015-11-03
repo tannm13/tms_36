@@ -2,5 +2,14 @@
   <%= link_to course.name, supervisors_course_path(course) %> |
   <%= link_to t("courses.delete"), supervisors_course_path(course),
     method: :delete, data: {confirm: t("courses.confirm")} %> |
-  <%= link_to t("users.edit"), edit_supervisors_course_path(course) %>
+  <%= link_to t("users.edit"), edit_supervisors_course_path(course) %> |
+  <% if course.finished? %>
+    <%= render "shared/finished" %>
+  <% else %>
+    <span id="finish-course-<%= course.id %>">
+      <%= link_to t("buttons.finish"),
+        supervisors_course_path(course, finish_course: true), method: :put,
+        remote: true %>
+    </span>
+  <% end %>
 </li>
