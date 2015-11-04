@@ -1,0 +1,17 @@
+<tr class="<%= user_task.finished? ? "danger" : "success" %>">
+  <td><%= user_task.task.name %></td>
+  <td><%= user_task.task.description %></td>
+  <td><%= l user_task.task.start_time, format: :short_date %></td>
+  <td><%= l user_task.task.end_time, format: :short_date %></td>
+  <td class="center">
+    <% if user_task.finished? %>
+      <span class="label label-danger"><%= t "buttons.finished" %></span>
+    <% else%>
+      <button type = "button" class = "btn btn-success" id = "user-task-<%= user_task.id %>">
+        <%= link_to t("buttons.finish"),
+        user_user_task_path(current_user.id, user_task.id),
+        method: :patch, remote: true %>
+      </button>
+    <% end %>
+  </td>
+</tr>

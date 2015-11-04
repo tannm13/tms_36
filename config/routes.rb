@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, except: [:destroy, :create, :new] do
     resources :courses, only: :show
     resources :subjects
+    resources :user_tasks
   end
 
   namespace :supervisors do

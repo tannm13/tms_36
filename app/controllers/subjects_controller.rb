@@ -2,7 +2,7 @@ class SubjectsController < ApplicationController
   before_action :find_subject, only: :show
 
   def show
-    @tasks = @subject.tasks
+    @user_tasks = current_user.user_tasks
   end
 
   private
