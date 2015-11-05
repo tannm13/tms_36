@@ -1,10 +1,10 @@
 class Supervisors::CourseSubjectsController < ApplicationController
   before_action :authorize_user
   before_action :authorize_supervisor
-  before_action :find_course, only: [:edit, :update]
+  before_action :find_course, only: [:index, :update]
   before_action :find_course_subject, only: [:edit, :update]
 
-  def edit
+  def index
     @subjects = Subject.all
   end
 

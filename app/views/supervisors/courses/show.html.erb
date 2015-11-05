@@ -68,13 +68,14 @@
       <td class="size18px text-info col-md-2">
         <b class="pull-right"></b>
       </td>
-        <li>
-          <%= link_to t("course.edit"),
-            edit_supervisors_course_path(@course) %> |
-          <%= link_to t("courses.add_subject"),
-            edit_supervisors_course_course_subject_path(@course,
-            @course_subject) %>
-        </li>
+      <li>
+        <%= link_to t("course.edit"),
+          edit_supervisors_course_path(@course) %> |
+        <%= link_to t("courses.add_subject"),
+          supervisors_course_course_subjects_path(@course) %> |
+        <%= link_to t("courses.add_trainee"),
+          supervisors_course_user_courses_path(@course) %>
+      </li>
     </tr>
   </table>
 </div>

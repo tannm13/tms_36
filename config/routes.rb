@@ -13,8 +13,9 @@ Rails.application.routes.draw do
     root "dashboard#index"
     resources :users
     resources :courses do
-      resources :course_subjects, only: [:edit, :update]
+      resources :course_subjects
       resources :subjects, only: :show
+      resources :user_courses
     end
     resources :subjects
   end
