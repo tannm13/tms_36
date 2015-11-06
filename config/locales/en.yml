@@ -133,3 +133,20 @@ en:
   time:
     formats:
       short_date: "%d-%m-%Y"
+  activities:
+    label: "Activities"
+    in: " in "
+    ago: " ago."
+    Course:
+      update_course_subject: "updated subjects of course"
+      update_course_trainee: "updated trainees of course"
+      update: "updated"
+      destroy: "deleted"
+    UserCourse:
+      finish: "finished"
+      destroy: "unjoined"
+      create: "joined"
+    UserSubject:
+      finish: "finished"
+    UserTask:
+      finish: "finished"

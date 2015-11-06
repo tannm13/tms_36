@@ -1,6 +1,7 @@
 <div class="row">
   <div>
-    <%= form_for @course, url: supervisors_course_path(@course) do |f| %>
+    <%= form_for @course, url: supervisors_course_path(@course,
+      activity: "update_course_subject") do |f| %>
       <%= hidden_field_tag "course[subject_ids][]" %>
       <h1><%= t "courses.add_subject_to_course" %></h1>
       <table class="table">

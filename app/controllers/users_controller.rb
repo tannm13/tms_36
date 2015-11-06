@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @activities = @user.activities.recent.paginate page: params[:page]
   end
 
   def edit

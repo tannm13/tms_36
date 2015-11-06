@@ -29,3 +29,10 @@
 <p class="container-fluid">
   <%= @user_subject.subject.description %>
 </p>
+<% if @activities.present? %>
+  <h3><%= t "users.activities" %></h3>
+  <ul>
+    <%= render @activities %>
+  </ul>
+  <%= will_paginate @activities %>
+<% end %>
