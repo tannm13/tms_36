@@ -1,7 +1,15 @@
-<h2><%= t "layouts.header.subject" %> : </h2>
-<ul>
-  <%= render @user_subjects %>
-</ul>
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t "subjects.name" %></th>
+      <th><%= t "subjects.start_date" %></th>
+      <th><%= t "subjects.end_date" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @user_subjects %>
+  </tbody>
+</table>
 <hr/>
 <h2><%= t "instructions" %></h2>
 <p class="container-fluid">

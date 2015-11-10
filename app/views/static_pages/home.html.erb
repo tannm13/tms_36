@@ -7,7 +7,17 @@
 <body>
   <h1><%= t "static_pages.home.welcome" %></h1>
   <h3><%= t "static_pages.home.support" %></h3>
-  <h2><%= t "layouts.header.courses" %> : </h2>
-  <%= render @courses if current_user %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t "courses.name" %></th>
+        <th><%= t "courses.start_date" %></th>
+        <th><%= t "courses.end_date" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @courses if current_user %>
+    </tbody>
+  </table>
 </body>
 </html>
