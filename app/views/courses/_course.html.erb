@@ -1,3 +1,9 @@
-<li>
-  <%= course.started? ? (link_to course.name, user_course_path(current_user, course)) : course.name %>
-</li>
+<tr class="<%= course.finished? ? "danger" : "success" %>">
+  <td>
+    <%= course.started? ? (link_to course.name,
+      user_course_path(current_user, course)) : course.name %>
+  </td>
+  <td><%= course.start_date %></td>
+  <td><%= course.end_date %></td>
+</tr>
+

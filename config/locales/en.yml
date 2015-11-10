@@ -98,7 +98,7 @@ en:
   subjects:
     task: "task"
     tasks: "Tasks :"
-    name: "Name"
+    name: "Subject Name"
     edit: "Edit"
     detail: "Detail"
     create_more: "Create"
