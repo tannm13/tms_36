@@ -3,6 +3,8 @@ class CoursesController < ApplicationController
 
   def show
     @user_subjects = current_user.user_subjects
+    @activities =
+      Activity.by_target(@course).recent.paginate page: params[:page]
   end
 
   private

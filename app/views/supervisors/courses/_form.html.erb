@@ -24,5 +24,6 @@
       selected_key = f.object.subject_ids), {}, {multiple: true,
         class: "form-control"} %>
   </div>
+  <%= hidden_field_tag :activity, "update" %>
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

@@ -1,5 +1,6 @@
 class Course < ActiveRecord::Base
   include StateAble
+  include LogAble
 
   enum status: {started: 0, finished: 1}
 

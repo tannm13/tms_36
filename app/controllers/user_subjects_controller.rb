@@ -3,6 +3,8 @@ class UserSubjectsController < ApplicationController
 
   def show
     @user_tasks = current_user.user_tasks
+    @activities =
+      Activity.by_target(@user_subject).recent.paginate page: params[:page]
   end
 
   def update

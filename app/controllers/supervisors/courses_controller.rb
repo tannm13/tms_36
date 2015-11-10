@@ -1,8 +1,11 @@
 class Supervisors::CoursesController < ApplicationController
+  include LogActivity
+
   before_action :authorize_user
   before_action :authorize_supervisor
   before_action :find_course, except: [:index, :new]
   before_action :find_subject, except: [:destroy, :index, :show]
+  after_action :log_activity, only: [:update, :destroy]
 
   def new
     @course = Course.new
@@ -40,7 +43,7 @@ class Supervisors::CoursesController < ApplicationController
   end
 
   def update
-    params[:finish_course] ? finish_course : update_course
+    "finish" == params[:activity] ? finish_course : update_course
   end
 
   private
@@ -64,6 +67,10 @@ class Supervisors::CoursesController < ApplicationController
       format.html {redirect_to :back}
       format.js
     end
+  end
+
+  def log_activity
+    log_activity @course, params[:activity]
   end
 
   def find_course
