@@ -142,6 +142,7 @@ en:
       update_course_trainee: "updated trainees of course"
       update: "updated"
       destroy: "deleted"
+      finish: "finished"
     UserCourse:
       finish: "finished"
       destroy: "unjoined"

@@ -5,7 +5,7 @@ class Supervisors::CoursesController < ApplicationController
   before_action :authorize_supervisor
   before_action :find_course, except: [:index, :new]
   before_action :find_subject, except: [:destroy, :index, :show]
-  after_action :log_activity, only: [:update, :destroy]
+  after_action :log_action, only: [:update, :destroy]
 
   def new
     @course = Course.new
@@ -69,7 +69,7 @@ class Supervisors::CoursesController < ApplicationController
     end
   end
 
-  def log_activity
+  def log_action
     log_activity @course, params[:activity]
   end
 
