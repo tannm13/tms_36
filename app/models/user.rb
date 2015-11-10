@@ -15,4 +15,5 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true
 
   scope :not_supervisors, -> {where is_supervisor: false}
+  scope :supervisors, -> {where is_supervisor: true}
 end

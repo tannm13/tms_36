@@ -2,20 +2,24 @@
   <div class="col-md-8">
     <%= form_for @course, url: supervisors_course_path(@course,
       activity: "update_course_trainee") do |f| %>
-      <%= hidden_field_tag "course[user_ids][]" %>
-      <h1><%= t "courses.add_trainee_to_course" %></h1>
+      <h1><%= t "courses.add_user" %></h1>
         <table class="table">
-          <% @users.each do |user| %>
-            <tr>
-              <td class="text-info">
-                <%= link_to user.name, user_path(user) %></b>
-              </td>
-              <td>
-                <%= f.check_box :user_ids, {name: "course[user_ids][]",
-                  checked: @course.users.include?(user)}, user.id, nil %>
-              </td>
-            </tr>
-          <% end %>
+            <%= f.fields_for :user_courses do |builder| %>
+              <tr class="supervisor">
+                <td class="text-info">
+                  <%= link_to builder.object.user.name, "" %></b>
+                </td>
+                <td>
+                <% if @course.users.include?(builder.object.user) %>
+                  <%= builder.label :_destroy, t("Delete") %>
+                  <%= builder.check_box :_destroy, {checked: false}, nil %>
+                <% else %>
+                  <%= builder.check_box :user_id,
+                    {checked: false}, builder.object.user.id, nil %>
+                <% end %>
+                </td>
+              </tr>
+            <% end %>
           <%= will_paginate @users %>
         </table>
       <div class="actions">

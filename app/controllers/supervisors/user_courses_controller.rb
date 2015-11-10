@@ -6,6 +6,11 @@ class Supervisors::UserCoursesController < ApplicationController
 
   def index
     @users = User.all.paginate page: params[:page]
+    @users.each do |user|
+      unless @course.user_courses.find_by(user_id: user.id)
+        @course.user_courses.build user_id: user.id
+      end
+    end
   end
 
   def show

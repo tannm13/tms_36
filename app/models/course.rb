@@ -4,7 +4,7 @@ class Course < ActiveRecord::Base
 
   enum status: {started: 0, finished: 1}
 
-  has_many :user_courses
+  has_many :user_courses, dependent: :destroy, inverse_of: :course
   has_many :users, through: :user_courses
   has_many :course_subjects
   has_many :subjects, through: :course_subjects
@@ -13,7 +13,10 @@ class Course < ActiveRecord::Base
   validates :description, presence: true, length: {maximum: 1000}
   validates :status, presence: true
 
-  before_save :update_subjects_status
+  after_save :update_subjects_status
+
+  accepts_nested_attributes_for :user_courses, allow_destroy: true,
+    reject_if: :all_blank
 
   private
   def update_subjects_status

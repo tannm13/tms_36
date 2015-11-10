@@ -20,19 +20,11 @@
     <tr>
       <td class="size18px text-info col-md-2">
         <b class="pull-right">
-          <%= pluralize @course.subjects.count, t("courses.supervisor") %>:</b>
+          <%= pluralize @course.users.supervisors.count,
+            t("courses.supervisor") %>:</b>
       </td>
       <td>
-      </td>
-    </tr>
-    <tr>
-      <td class="size18px text-info col-md-2">
-        <b class="pull-right">
-          <%= pluralize @course.users.count, t("courses.trainee") %> :
-        </b>
-      </td>
-      <td>
-        <% @course.users.each do |user| %>
+        <% @course.users.supervisors.each do |user| %>
           <span class="glyphicon glyphicon-user text-info"></span>&nbsp;
           <%= link_to user.name, "#" %>
         <% end %>
@@ -40,7 +32,22 @@
     </tr>
     <tr>
       <td class="size18px text-info col-md-2">
-        <b class="pull-right"><%= t "courses.subjects" %> :</b>
+        <b class="pull-right">
+          <%= pluralize @course.users.not_supervisors.count,
+            t("courses.trainee") %> :
+        </b>
+      </td>
+      <td>
+        <% @course.users.not_supervisors.each do |user| %>
+          <span class="glyphicon glyphicon-user text-info"></span>&nbsp;
+          <%= link_to user.name, "#" %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td class="size18px text-info col-md-2">
+        <b class="pull-right"><%= pluralize @course.subjects.count,
+          t("courses.subject") %> :</b>
       </td>
       <td>
         <% @course.subjects.each do |subject| %>
@@ -73,7 +80,7 @@
           edit_supervisors_course_path(@course) %> |
         <%= link_to t("courses.add_subject"),
           supervisors_course_course_subjects_path(@course) %> |
-        <%= link_to t("courses.add_trainee"),
+        <%= link_to t("courses.add_user"),
           supervisors_course_user_courses_path(@course) %>
       </li>
     </tr>
