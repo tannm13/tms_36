@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103033252) do
+ActiveRecord::Schema.define(version: 20151111041034) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "name"
@@ -92,7 +92,6 @@ ActiveRecord::Schema.define(version: 20151103033252) do
   end
 
   add_index "user_courses", ["course_id"], name: "index_user_courses_on_course_id"
-  add_index "user_courses", ["user_id", "course_id"], name: "index_user_courses_on_user_id_and_course_id", unique: true
   add_index "user_courses", ["user_id"], name: "index_user_courses_on_user_id"
 
   create_table "user_subjects", force: :cascade do |t|

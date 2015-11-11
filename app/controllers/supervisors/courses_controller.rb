@@ -3,8 +3,9 @@ class Supervisors::CoursesController < ApplicationController
 
   before_action :authorize_user
   before_action :authorize_supervisor
-  before_action :find_course, except: [:index, :new]
+  before_action :find_course, except: [:index, :new, :create]
   before_action :find_subject, except: [:destroy, :index, :show]
+  before_action :find_supervisor_in_course, except: [:new, :create, :index]
   after_action :log_action, only: [:update, :destroy]
 
   def new
@@ -79,10 +80,18 @@ class Supervisors::CoursesController < ApplicationController
 
   def course_params
     params.require(:course).permit(:name, :description, :status, :start_date,
-      :end_date, subject_ids: [], user_ids: [])
+      :end_date, subject_ids: [],
+      user_courses_attributes: [:id, :course_id, :user_id, :_destroy])
   end
 
   def find_subject
     @subjects = Subject.all
+  end
+
+  def find_supervisor_in_course
+    unless @course.user_courses.map(&:user_id).include?(current_user.id)
+      redirect_back_or supervisors_courses_path
+      flash[:danger] = t "courses.not_user"
+    end
   end
 end

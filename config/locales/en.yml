@@ -120,15 +120,15 @@ en:
     trainee: "Trainees"
     subject: "Subjects"
     add_subject_to_course: "Add subjects to course"
-    add_trainee_to_course: "Add trainees to course"
     add_subject: "Add subjects"
-    add_trainee: "Add Trainees"
+    add_user: "Add User"
     edit_course: "Edit"
     update_success: "Course updated"
     update_error: "Course update error"
     delete: "Delete"
     confirm: "Do you really want to delete this course?"
     edit_form: "Edit course"
+    not_user: "Not supervisor in course"
   instructions: "Instructions: "
   time:
     formats:
@@ -151,3 +151,4 @@ en:
       finish: "finished"
     UserTask:
       finish: "finished"
+    delete: "Delete"
