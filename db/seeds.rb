@@ -8,24 +8,3 @@
 User.create!(name: "Admin", email: "admin@framgia.com", password:"admin123",
 	password_confirmation: "admin123", is_supervisor: true,
 	created_at: Time.zone.now)
-
-9.times do |n|
-  name = Faker::Name.name
-  email = "example-#{n+1}@tms36.org"
-  password = "123456"
-  User.create!(name: name,
-    email: email,
-    password: password,
-    password_confirmation: password,
-    is_supervisor: false,
-    created_at: Time.zone.now)
-end
-
-10.times do |n|
-  name = Faker::Name.name
-  demo = "Demo description"
-  Subject.create!(name: name,
-    description: demo,
-    created_at: Time.zone.now,
-    status: 0)
-end
