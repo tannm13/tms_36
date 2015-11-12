@@ -12,9 +12,11 @@ class Task < ActiveRecord::Base
 
   private
   def create_user_tasks
-    self.subject.user_subjects.each do |user_subject|
-      user_subject.user_tasks.create(user_id: user_subject.user.id,
-        task_id: self.id, status: self.subject.status)
+    if self.subject.started? && self.subject.user_subjects.present?
+      self.subject.user_subjects.each do |user_subject|
+        user_subject.user_tasks.create user_id: user_subject.user.id,
+          task_id: self.id, status: :started
+      end
     end
   end
 end
