@@ -6,7 +6,7 @@
   <%= f.text_area :description, class: "form-control" %>
 
   <%= f.label :status, class: "pull-right" do %>
-    <%= f.check_box :status %>
+    <%= f.check_box :status, {}, "finished", "started" %>
     <%= t "buttons.finished" %>
   <% end %>
 

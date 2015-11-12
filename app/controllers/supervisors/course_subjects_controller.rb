@@ -9,7 +9,7 @@ class Supervisors::CourseSubjectsController < ApplicationController
   end
 
   def update
-    params[:finish_subject] ? finish_subject : add_subjects
+    "finish_subject" == params[:activity]  ? finish_subject : add_subjects
   end
 
   private
