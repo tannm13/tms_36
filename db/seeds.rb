@@ -29,12 +29,3 @@ end
     created_at: Time.zone.now,
     status: 0)
 end
-
-10.times do |n|
-  name = Faker::Name.name
-  demo = "Demo description"
-  Course.create!(name: name,
-    description: demo,
-    created_at: Time.zone.now,
-    status: 0)
-end

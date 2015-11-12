@@ -109,6 +109,7 @@ en:
     finish: "Finish this subject!"
     finished: "finished!"
     started: "Started!"
+    task_name: "Task Name"
   courses:
     name: "Course Name"
     started: "Started"

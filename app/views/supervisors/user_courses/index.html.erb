@@ -11,11 +11,10 @@
                 </td>
                 <td>
                 <% if @course.users.include?(builder.object.user) %>
-                  <%= builder.label :_destroy, t("Delete") %>
-                  <%= builder.check_box :_destroy, {checked: false}, nil %>
+                  <%= builder.check_box :_destroy, {checked: true}, 0, 1 %>
                 <% else %>
                   <%= builder.check_box :user_id,
-                    {checked: false}, builder.object.user.id, nil %>
+                    {checked: false}, builder.object.user_id, nil %>
                 <% end %>
                 </td>
               </tr>
