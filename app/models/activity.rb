@@ -6,6 +6,6 @@ class Activity < ActiveRecord::Base
     target.class.name, target.id}
 
   def target
-    self.target_type.constantize.find self.target_id
+    self.target_type.constantize.find_by_id self.target_id
   end
 end

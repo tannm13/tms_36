@@ -1,15 +1,19 @@
 <li>
   <%= activity.user.name %>
   <%= t "activities.#{activity.target_type}.#{activity.name}" %>
-  <% target_name = case activity.target_type %>
-    <% when "Course" then activity.target.name %>
-    <% when "UserCourse" then activity.target.course.name %>
-    <% when "UserSubject" then activity.target.subject.name <<
-      t("activities.in") << activity.target.user_course.course.name %>
-    <% when "UserTask" then activity.target.subject.name <<
-      t("activities.in") << activity.target.user_subject.subject.name <<
-      t("activities.in") <<
-      activity.target.user_subject.user_course.course.name %>
+  <% if activity.target.present? %>
+    <% target_name = case activity.target_type %>
+      <% when "Course" then activity.target.name %>
+      <% when "UserCourse" then activity.target.course.name %>
+      <% when "UserSubject" then activity.target.subject.name <<
+        t("activities.in") << activity.target.user_course.course.name %>
+      <% when "UserTask" then activity.target.subject.name <<
+        t("activities.in") << activity.target.user_subject.subject.name <<
+        t("activities.in") <<
+        activity.target.user_subject.user_course.course.name %>
+    <% end %>
+  <% else %>
+    <% target_name = activity.description %>
   <% end %>
   <%= target_name %>
   <span class="timestamp">
