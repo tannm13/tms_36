@@ -1,8 +1,13 @@
 <tr class="<%= user_task.finished? ? "danger" : "success" %>">
   <td><%= user_task.task.name %></td>
   <td><%= user_task.task.description %></td>
-  <td><%= l user_task.task.start_time, format: :short_date %></td>
-  <td><%= l user_task.task.end_time, format: :short_date %></td>
+  <% if user_task.task.start_time.nil? || user_task.task.end_time.nil?  %>
+    <td><%= user_task.task.start_time %></td>
+    <td><%= user_task.task.end_time %></td>
+  <% else %>
+    <td><%= l user_task.task.start_time, format: :short_date %></td>
+    <td><%= l user_task.task.end_time, format: :short_date %></td>
+  <% end %>
   <td class="center">
     <% if user_task.finished? %>
       <span class="label label-danger"><%= t "buttons.finished" %></span>
