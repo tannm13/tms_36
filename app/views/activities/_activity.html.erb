@@ -7,7 +7,7 @@
       <% when "UserCourse" then activity.target.course.name %>
       <% when "UserSubject" then activity.target.subject.name <<
         t("activities.in") << activity.target.user_course.course.name %>
-      <% when "UserTask" then activity.target.subject.name <<
+      <% when "UserTask" then activity.target.task.name <<
         t("activities.in") << activity.target.user_subject.subject.name <<
         t("activities.in") <<
         activity.target.user_subject.user_course.course.name %>

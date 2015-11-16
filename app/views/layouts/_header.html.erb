@@ -13,8 +13,7 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to t("layouts.header.profile"),
-                supervisors_user_path(current_user) %></li>
+              <li><%= link_to t("layouts.header.profile"), current_user %></li>
               <li><%= link_to t("layouts.header.setting"),
                 edit_supervisors_user_path(current_user) %></li>
               <li class="divider"></li>
