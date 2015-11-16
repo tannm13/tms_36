@@ -2,7 +2,7 @@
   <td>
     <% if user_subject.subject.started? %>
       <%= (link_to user_subject.subject.name,
-        user_user_subject_path(current_user, user_subject.subject)) %>
+        user_user_subject_path(current_user, user_subject)) %>
     <% else %>
       <%= user_subject.subject.name %>
     <% end %>
