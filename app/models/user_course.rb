@@ -5,7 +5,7 @@ class UserCourse < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :course
-  has_many :user_subjects
+  has_many :user_subjects, dependent: :destroy
 
   after_create :log_create, :create_user_subjects
   after_destroy :log_destroy
