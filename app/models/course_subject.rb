@@ -9,7 +9,8 @@ class CourseSubject < ActiveRecord::Base
   has_many :course_subject_tasks
   has_many :tasks, through: :course_subject_tasks
 
-  after_create :create_user_subjects
+  before_destroy :destroy_user_subjects
+  before_create :create_user_subjects
 
   private
   def create_user_subjects
@@ -18,6 +19,12 @@ class CourseSubject < ActiveRecord::Base
         user_course.user_subjects.create user_id: user_course.user.id,
           subject_id: self.subject.id, status: :started
       end
+    end
+  end
+
+  def destroy_user_subjects
+    self.subject.user_subjects.by_course_id(self.course.id).each do |user_subject|
+      user_subject.destroy
     end
   end
 end
