@@ -1,9 +1,12 @@
-<li>
-  <% if user_subject.subject.started? %>
-    <%= (link_to user_subject.subject.name,
-      user_user_subject_path(current_user, user_subject.subject)) %>
-  <% else %>
-    <%= user_subject.subject.name %>
-    <%= render "user_subjects/finished" %>
-  <% end %>
-</li>
+<tr class="<%= user_subject.subject.finished? ? "danger" : "success" %>">
+  <td>
+    <% if user_subject.subject.started? %>
+      <%= (link_to user_subject.subject.name,
+        user_user_subject_path(current_user, user_subject)) %>
+    <% else %>
+      <%= user_subject.subject.name %>
+    <% end %>
+  </td>
+  <td><%= user_subject.subject.start_date %></td>
+  <td><%= user_subject.subject.end_date %></td>
+</tr>
