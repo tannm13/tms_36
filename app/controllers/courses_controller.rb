@@ -10,8 +10,8 @@ class CoursesController < ApplicationController
 
   private
   def find_user_course
-    @user_course = UserCourse.find_by user_id: params[:user_id],
-      course_id: params[:id]
+    @user_course = UserCourse.find_by_user_id_and_course_id(params[:user_id],
+     params[:id])
   end
 
   def find_course
