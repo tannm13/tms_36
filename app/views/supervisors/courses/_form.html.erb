@@ -1,7 +1,8 @@
 <%= form_for [:supervisors, @course] do |f| %>
   <%= render "shared/error_messages", object: f.object %>
   <%= f.fields_for :user_courses, @course.user_courses.build do |builder| %>
-    <%= builder.hidden_field :user_id, value: current_user.id %>
+    <% builder.hidden_field :user_id,
+      value: current_user.id unless @course.users.include?(current_user) %>
   <% end %>
 
   <%= f.label :name %>
@@ -12,21 +13,14 @@
 
   <%= f.label :status %>
   <%= f.select :status, options_for_select(Course.statuses.map{|k, v| [k, k]}),
-    class: "form-control" %>
+    class: "form-control" %></br>
 
-  <%= f.label :start_date %>
-  <%= f.date_select :start_date, class: "form-control" %>
+  <%= f.label :start_date %></br>
+  <%= f.date_select :start_date, class: "date-select" %></br>
 
-  <%= f.label :end_date %>
-  <%= f.date_select :end_date, class: "form-control" %>
+  <%= f.label :end_date %></br>
+  <%= f.date_select :end_date, class: "date-select" %>
 
-  <h2><%= t "views.messages.add_subject_to_course" %></h2>
-  <div class="col-md-8 pull-right">
-    <%= f.select :subject_ids,
-      options_for_select(@subjects.map{|subject| [subject.name, subject.id]},
-      selected_key = f.object.subject_ids), {}, {multiple: true,
-        class: "form-control"} %>
-  </div>
   <%= hidden_field_tag :activity, "update" %>
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

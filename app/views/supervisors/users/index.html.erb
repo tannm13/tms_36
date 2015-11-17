@@ -1,7 +1,17 @@
 <% provide :title, t("layouts.header.all_user") %>
 <h1><%= t "layouts.header.all_user" %></h1>
 <%= will_paginate %>
-<ul class="users">
-  <%= render @users %>
-</ul>
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t "users.avata" %></th>
+      <th><%= t "users.name" %></th>
+      <th><%= t "users.edit" %></th>
+      <th><%= t "users.delete" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @users %>
+  </tbody>
+</table>
 <%= will_paginate %>

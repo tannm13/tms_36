@@ -4,7 +4,7 @@
       activity: "update_course_trainee") do |f| %>
       <h1><%= t "courses.add_user" %></h1>
         <table class="table">
-            <%= f.fields_for :user_courses do |builder| %>W
+            <%= f.fields_for :user_courses do |builder| %>
               <tr class="supervisor">
                 <td class="text-info">
                   <%= link_to builder.object.user.name, "" %></b>
