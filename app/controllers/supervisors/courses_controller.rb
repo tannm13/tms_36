@@ -16,7 +16,7 @@ class Supervisors::CoursesController < ApplicationController
     @course = Course.new course_params
     if @course.save course_params
       flash[:success] = t "flashs.course.create"
-      redirect_to :back
+      redirect_to supervisors_courses_path
     else
       flash.now[:danger] = t "flashs.user.invalid"
       render :new

@@ -155,3 +155,14 @@ input {
 .user {
   background: #E8BBFF;
 }
+
+select {
+  width: 100px;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+}
+select.date-select {
+    width:auto;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+}

@@ -34,6 +34,7 @@ class Supervisors::UsersController < ApplicationController
 
   def show
     @user_courses = @user.user_courses
+    @activities = @user.activities.recent.paginate page: params[:page]
   end
 
   def edit

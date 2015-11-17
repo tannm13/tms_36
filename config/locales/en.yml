@@ -90,6 +90,7 @@ en:
     delete: "Delete"
     ask_del: "You sure?"
     edit: "Edit"
+    name: "Name"
   dashboard:
     admin: "Admin Dashboard"
     course: "Course Dashboard"
@@ -130,6 +131,7 @@ en:
     confirm: "Do you really want to delete this course?"
     edit_form: "Edit course"
     not_user: "Not supervisor in course"
+    create: "Create New"
   instructions: "Instructions: "
   time:
     formats:
