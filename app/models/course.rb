@@ -16,7 +16,9 @@ class Course < ActiveRecord::Base
   after_save :update_subjects_status
 
   accepts_nested_attributes_for :user_courses, allow_destroy: true,
-    reject_if: :all_blank
+    reject_if: proc { |attributes| attributes['user_id'].blank? }
+  accepts_nested_attributes_for :course_subjects, allow_destroy: true,
+    reject_if: proc { |attributes| attributes['subject_id'].blank? }
 
   private
   def update_subjects_status

@@ -3,6 +3,10 @@ class UserSubject < ActiveRecord::Base
   include LogAble
   enum status: {started: 0, finished: 1}
 
+  user_courses = "(select id from user_courses where course_id = ?)"
+  scope :by_course_id, ->course_id{where "user_course_id in #{user_courses}",
+    course_id}
+
   belongs_to :user
   belongs_to :subject
   belongs_to :user_course

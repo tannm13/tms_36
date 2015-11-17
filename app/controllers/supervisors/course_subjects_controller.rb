@@ -5,7 +5,12 @@ class Supervisors::CourseSubjectsController < ApplicationController
   before_action :find_course_subject, only: [:edit, :update]
 
   def index
-    @subjects = Subject.all
+    @subjects = Subject.all.paginate page: params[:page]
+    @subjects.each do |subject|
+      unless @course.course_subjects.find_by(subject_id: subject.id)
+        @course.course_subjects.build subject_id: subject.id
+      end
+    end
   end
 
   def update

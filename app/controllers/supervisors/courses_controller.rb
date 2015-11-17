@@ -80,8 +80,9 @@ class Supervisors::CoursesController < ApplicationController
 
   def course_params
     params.require(:course).permit(:name, :description, :status, :start_date,
-      :end_date, subject_ids: [],
-      user_courses_attributes: [:id, :course_id, :user_id, :_destroy])
+      :end_date,
+      course_subjects_attributes: [:id, :course_id, :subject_id, :status, :_destroy],
+      user_courses_attributes: [:id, :course_id, :user_id, :status, :_destroy])
   end
 
   def find_subject

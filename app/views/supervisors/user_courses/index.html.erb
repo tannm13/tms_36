@@ -4,7 +4,7 @@
       activity: "update_course_trainee") do |f| %>
       <h1><%= t "courses.add_user" %></h1>
         <table class="table">
-            <%= f.fields_for :user_courses do |builder| %>
+            <%= f.fields_for :user_courses do |builder| %>W
               <tr class="supervisor">
                 <td class="text-info">
                   <%= link_to builder.object.user.name, "" %></b>
@@ -15,6 +15,7 @@
                 <% else %>
                   <%= builder.check_box :user_id,
                     {checked: false}, builder.object.user_id, nil %>
+                  <%= builder.hidden_field :status, value: :started %>
                 <% end %>
                 </td>
               </tr>
